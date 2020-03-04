@@ -37,7 +37,7 @@ def EdgeDetection(img):
     return output
 
 def main():
-    img = cv.imread('marvel.png',cv.IMREAD_GRAYSCALE)
+    img = cv.imread('marvel.png',cv.IMREAD_COLOR)
     filtered = EdgeDetection(img)
     cv.imshow("Original",img)
     cv.imshow("Filtered",filtered)
