@@ -40,6 +40,11 @@ def gaussianKrnFilter(img, krad):
 
     return output
 
+def intensityAprox(img, mat):
+
+    return output
+
+
 def convolvebilateral(img, krn):
     # kernel
     ksize, _ = krn.shape
@@ -50,14 +55,16 @@ def convolvebilateral(img, krn):
 
     # frame
     height, width, depth = img.shape
+    framed2 = np.ones((height + 2*krad, width + 2*krad, depth))
     framed = np.ones((height + 2*krad, width + 2*krad, depth))
+    framed2[krad:-krad,krad:-krad] = img2
     framed[krad:-krad,krad:-krad] = img
 
     # filter
     output = np.zeros(img.shape)
     for i in range(0, height):
         for j in range(0, width):
-            output[i, j] = (framed[i:i+ksize, j:j+ksize] * krn[:,:, np.newaxis]).sum(axis=(0, 1))
+            output[i, j] = (framed[i:i+ksize, j:j+ksize] * krn[:,:, np.newaxis] * intensityAprox(framed2, framed[i:i+ksize, j:j+ksize])).sum(axis=(0, 1))
 
     return output
 
@@ -87,7 +94,7 @@ def main():
     img = cv.imread('marvel.png',cv.IMREAD_COLOR)
     krad = 5
     #filtered = gaussianKrnFilter(img, krad)
-    filtered = bilateralFilter(img, krad, tpci)
+    filtered = bilateralFilter(img, krad)
     cv.imshow("Original",img)
     cv.imshow("Filtered",filtered)
     cv.waitKey(0)
