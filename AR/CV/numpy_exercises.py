@@ -33,7 +33,7 @@ def ex19():
     cv.imshow("window",arr)
     cv.waitKey(0)
 
-ex19()
+#ex19()
 
 def ex20():
     arr = np.ones(shape=(64,64,3))
@@ -41,3 +41,12 @@ def ex20():
     cv.waitKey(0)
 
 #ex20()
+
+def test():
+    arr = np.ones((3,3))
+    arr2 = np.ones((3,3))
+    arr2[:] = 2
+    arr3 = arr * arr2
+    print(arr3)
+
+test()

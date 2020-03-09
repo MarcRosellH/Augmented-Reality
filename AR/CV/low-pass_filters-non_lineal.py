@@ -40,22 +40,20 @@ def gaussianKrnFilter(img, krad):
 
     return output
 
-def intensityAprox(img, mat):
-
-    return output
-
-
 def convolvebilateral(img, krn):
     # kernel
     ksize, _ = krn.shape
     krad = int(ksize/2)
 
     # copy image in intensity
-    img2 = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+    img2 = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+
+    # normalize
+    img=img/255.0
 
     # frame
     height, width, depth = img.shape
-    framed2 = np.ones((height + 2*krad, width + 2*krad, depth))
+    framed2 = np.ones((height + 2*krad, width + 2*krad))
     framed = np.ones((height + 2*krad, width + 2*krad, depth))
     framed2[krad:-krad,krad:-krad] = img2
     framed[krad:-krad,krad:-krad] = img
@@ -64,14 +62,11 @@ def convolvebilateral(img, krn):
     output = np.zeros(img.shape)
     for i in range(0, height):
         for j in range(0, width):
-            output[i, j] = (framed[i:i+ksize, j:j+ksize] * krn[:,:, np.newaxis] * intensityAprox(framed2, framed[i:i+ksize, j:j+ksize])).sum(axis=(0, 1))
+            output[i, j] = (framed[i:i+ksize, j:j+ksize] * krn[:,:, np.newaxis] * (1/((framed2[i, j,np.newaxis] * framed2[i:i+ksize,j:j+ksize,np.newaxis])/(framed2[i, j,np.newaxis] * framed2[i:i+ksize,j:j+ksize,np.newaxis]).sum())*(1/3)**2)/framed2[i:i+ksize,j:j+ksize,np.newaxis]).sum(axis=(0, 1))
 
     return output
 
 def bilateralFilter(img, krad):
-
-    # normalize
-    img=img/255.0
 
     # define ksize
     sigma = krad/3
