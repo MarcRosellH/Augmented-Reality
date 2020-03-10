@@ -24,7 +24,7 @@ def edgesconvolve(img,krn):
             output2[i, j] = (framed[i:i+ksize, j:j+ksize] * krn[:,:, np.newaxis]).sum(axis=(0, 1))
     output[:,:] = np.sqrt(output1[:,:]**2 + output2[:,:]**2)
     
-    return output
+    return output/output.max()
 
 def EdgeDetection(img):
     img = img/255.0
