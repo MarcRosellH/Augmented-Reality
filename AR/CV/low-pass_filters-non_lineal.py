@@ -62,7 +62,7 @@ def convolvebilateral(img, krn):
     output = np.zeros(img.shape)
     for i in range(0, height):
         for j in range(0, width):
-            output[i, j] = (framed[i:i+ksize, j:j+ksize] * krn[:,:, np.newaxis] * (1/((framed2[i, j,np.newaxis] * framed2[i:i+ksize,j:j+ksize,np.newaxis])/(framed2[i, j,np.newaxis] * framed2[i:i+ksize,j:j+ksize,np.newaxis]).sum())*(1/3)**2)/framed2[i:i+ksize,j:j+ksize,np.newaxis]).sum(axis=(0, 1))
+            output[i, j] = (framed[i:i+ksize, j:j+ksize] * krn[:,:, np.newaxis] * (1/((framed2[i, j,np.newaxis] - framed2[i:i+ksize,j:j+ksize,np.newaxis]))*(1/3)**2)/framed2[i:i+ksize,j:j+ksize,np.newaxis]).sum(axis=(0, 1))
 
     return output
 

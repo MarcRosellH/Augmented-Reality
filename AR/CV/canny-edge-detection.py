@@ -92,9 +92,17 @@ def GradientDirection(img, krn):
             output2[i, j] = (framed[i:i+ksize, j:j+ksize] * krn[:,:]).sum(axis=(0, 1))
     
     output[:,:] = np.arctan2(output2[:,:],output1[:,:])
-    output[output < 45/2 and output > (315+45)/2 or output < (180+45)/2 and output > (135+45)/2 ] = 0
-    output[output > (90+135)/2 and output  ]
+    output[output < 45/2 and output > 315+(45/2) or output < 180+(45/2) and output > 135+(45/2)] = 0
+    output[output > 45/2 and output < 90-(45/2) or output > 180+(45/2) and output < 225+(45/2)] = 45
+    output[output > 90-(45/2) and output < 90+(45/2) or output > 225+(45/2) and output < 270+(45/2)] = 90
+    output[output > 90+(45/2) and output < 135+(45/2) or output > 270+(45/2) and output < 315+(45/2)] = 135
     
+    return output
+
+def NonMaximumSupression(edged, directional):
+    output = np.zeros(edged)
+    cv.imshow("edged",edged)
+    cv.imshow("output",output)
     return output
 
 def main():
@@ -104,12 +112,14 @@ def main():
     img = img/255.0
     # gaussian blur
     first = gaussianKrnFilter(img, 2)
-    # sobel edgeDetection
+    # sobel EdgeDetection
     second = EdgeDetection(first,SobelEdges())
     # gradient direction
     third = GradientDirection(first,SobelEdges())
+    # Edge Thinning
+    fourth = NonMaximumSupression(second, third)
     cv.imshow("Original",img)
-    cv.imshow("Filtered",second)
+    #cv.imshow("Filtered",second)
     cv.waitKey(0)
 
 main()
