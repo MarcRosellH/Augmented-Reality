@@ -5,6 +5,7 @@ def ScharrEdges():
     kr = [-3,0,3,-10,0,10,-3,0,3]
     krn = np.array(kr)
     krn = krn.reshape(3,3)
+    return krn
 
 def SobelEdges():
     kr = [-1,0,1,-2,0,2,-1,0,1]
@@ -34,12 +35,15 @@ def EdgeDetection(img, krn):
         for j in range(0, width):
             output2[i, j] = (framed[i:i+ksize, j:j+ksize] * krn[:,:]).sum(axis=(0, 1))
     output[:,:] = np.sqrt(output1[:,:]**2 + output2[:,:]**2)
+
+    output /= output.max()
     
     return output
 
 def main():
     img = cv.imread('marvel.png',cv.IMREAD_GRAYSCALE)
-    filtered = EdgeDetection(img, SobelEdges())
+    img = img/255.0
+    filtered = EdgeDetection(img, ScharrEdges())
     cv.imshow("Original",img)
     cv.imshow("Filtered",filtered)
     cv.waitKey(0)
