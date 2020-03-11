@@ -162,8 +162,8 @@ def ThresHolding(img, min, max):
     return output
 
 def main():
-    min = 0.0
-    max = 0.1
+    min = 0.1
+    max = 0.2
     # load image
     img = cv.imread('baixa.jpg',cv.IMREAD_GRAYSCALE)
     # normalize
