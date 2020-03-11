@@ -94,15 +94,16 @@ def GradientDirection(img, krn):
     output[:,:] = np.arctan2(output2[:,:],output1[:,:])
     output *= (180.0/np.pi)
     h, w = output.shape
+    output[output < 0] += 180
     for i in range(0,h):
         for j in range(0,w):
-            if abs(output[i,j]) < 45.0/2.0 and abs(output[i,j]) > 315.0+(45.0/2.0) or abs(output[i,j]) < 180.0+(45.0/2.0) and abs(output[i,j]) > 135.0+(45.0/2.0):
+            if output[i,j] < 45.0/2.0 and output[i,j] >= 0 or output[i,j] > 135.0+(45.0/2.0) and output[i,j] <= 180.0:
                 output[i,j] = 0
-            if abs(output[i,j]) > 45.0/2.0 and abs(output[i,j]) < 90.0-(45.0/2.0) or abs(output[i,j]) > 180.0+(45.0/2.0) and abs(output[i,j]) < 225.0+(45.0/2.0):
+            if output[i,j] > 45.0/2.0 and output[i,j] < 90.0-(45.0/2.0):
                 output[i,j] = 45
-            if abs(output[i,j]) > 90.0-(45.0/2.0) and abs(output[i,j]) < 90.0+(45.0/2.0) or abs(output[i,j]) > 225.0+(45.0/2.0) and abs(output[i,j]) < 270.0+(45.0/2.0):
+            if output[i,j] > 90.0-(45.0/2.0) and output[i,j] < 90.0+(45.0/2.0):
                 output[i,j] = 90
-            if abs(output[i,j]) > 90.0+(45.0/2.0) and abs(output[i,j]) < 135.0+(45.0/2.0) or abs(output[i,j]) > 270.0+(45.0/2.0) and abs(output[i,j]) < 315.0+(45.0/2.0):
+            if output[i,j] > 90.0+(45.0/2.0) and output[i,j] < 135.0+(45.0/2.0):
                 output[i,j] = 135
 
     print(output)
@@ -110,9 +111,18 @@ def GradientDirection(img, krn):
     return output
 
 def NonMaximumSupression(edged, directional):
-    output = np.zeros(edged)
-    cv.imshow("edged",edged)
-    cv.imshow("output",output)
+    height, width = edged.shape
+    output = np.zeros((height+2,width+2))
+    output[1:-1,1:-1] = edged
+    for i in range(0,height):
+        for j in range(0,width):
+            if directional[i,j] = 0:
+                if edged[i,j] < edged[i]
+            if directional[i,j] = 45:
+
+            if directional[i,j] = 90:
+
+            if directional[i,j] = 135:
     return output
 
 def main():
@@ -127,7 +137,7 @@ def main():
     # gradient direction
     third = GradientDirection(first,SobelEdges())
     # Edge Thinning
-    # fourth = NonMaximumSupression(second, third)
+    fourth = NonMaximumSupression(second, third)
     cv.imshow("Original",img)
     #cv.imshow("Filtered",second)
     cv.waitKey(0)
