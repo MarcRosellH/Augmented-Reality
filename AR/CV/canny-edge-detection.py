@@ -92,10 +92,20 @@ def GradientDirection(img, krn):
             output2[i, j] = (framed[i:i+ksize, j:j+ksize] * krn[:,:]).sum(axis=(0, 1))
     
     output[:,:] = np.arctan2(output2[:,:],output1[:,:])
-    output[output < 45/2 and output > 315+(45/2) or output < 180+(45/2) and output > 135+(45/2)] = 0
-    output[output > 45/2 and output < 90-(45/2) or output > 180+(45/2) and output < 225+(45/2)] = 45
-    output[output > 90-(45/2) and output < 90+(45/2) or output > 225+(45/2) and output < 270+(45/2)] = 90
-    output[output > 90+(45/2) and output < 135+(45/2) or output > 270+(45/2) and output < 315+(45/2)] = 135
+    output *= (180.0/np.pi)
+    h, w = output.shape
+    for i in range(0,h):
+        for j in range(0,w):
+            if abs(output[i,j]) < 45.0/2.0 and abs(output[i,j]) > 315.0+(45.0/2.0) or abs(output[i,j]) < 180.0+(45.0/2.0) and abs(output[i,j]) > 135.0+(45.0/2.0):
+                output[i,j] = 0
+            if abs(output[i,j]) > 45.0/2.0 and abs(output[i,j]) < 90.0-(45.0/2.0) or abs(output[i,j]) > 180.0+(45.0/2.0) and abs(output[i,j]) < 225.0+(45.0/2.0):
+                output[i,j] = 45
+            if abs(output[i,j]) > 90.0-(45.0/2.0) and abs(output[i,j]) < 90.0+(45.0/2.0) or abs(output[i,j]) > 225.0+(45.0/2.0) and abs(output[i,j]) < 270.0+(45.0/2.0):
+                output[i,j] = 90
+            if abs(output[i,j]) > 90.0+(45.0/2.0) and abs(output[i,j]) < 135.0+(45.0/2.0) or abs(output[i,j]) > 270.0+(45.0/2.0) and abs(output[i,j]) < 315.0+(45.0/2.0):
+                output[i,j] = 135
+
+    print(output)
     
     return output
 
@@ -117,7 +127,7 @@ def main():
     # gradient direction
     third = GradientDirection(first,SobelEdges())
     # Edge Thinning
-    fourth = NonMaximumSupression(second, third)
+    # fourth = NonMaximumSupression(second, third)
     cv.imshow("Original",img)
     #cv.imshow("Filtered",second)
     cv.waitKey(0)
