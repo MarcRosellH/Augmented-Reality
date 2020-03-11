@@ -105,29 +105,67 @@ def GradientDirection(img, krn):
                 output[i,j] = 90
             if output[i,j] > 90.0+(45.0/2.0) and output[i,j] < 135.0+(45.0/2.0):
                 output[i,j] = 135
-
-    print(output)
     
     return output
 
-def NonMaximumSupression(edged, directional):
-    height, width = edged.shape
+def NonMaximumSupression(edged2, directional):
+    height, width = edged2.shape
     output = np.zeros((height+2,width+2))
-    output[1:-1,1:-1] = edged
+    edged = np.zeros((height+2,width+2))
+    edged[1:-1,1:-1] = edged2
+    output[1:-1,1:-1] = edged2
+    h, w = edged.shape
+    for i in range(1,h-1):
+        for j in range(1,w-1):
+            if directional[i-1,j-1] == 0:
+                if edged[i,j] < edged[i-1,j] or edged[i,j] < edged[i+1,j]:
+                    output[i,j] = 0
+                else:
+                    output[i,j] = edged[i,j]
+            if directional[i-1,j-1] == 45:
+                if edged[i,j] < edged[i+1,j-1] or edged[i,j] < edged[i-1,j+1]:
+                    output[i,j] = 0
+                else:
+                    output[i,j] = edged[i,j]
+            if directional[i-1,j-1] == 90:
+                if edged[i,j] < edged[i,j-1] or edged[i,j] < edged[i,j+1]:
+                    output[i,j] = 0
+                else:
+                    output[i,j] = edged[i,j]
+            if directional[i-1,j-1] == 135:
+                if edged[i,j] < edged[i-1,j-1] or edged[i,j] < edged[i+1,j+1]:
+                    output[i,j] = 0
+                else:
+                    output[i,j] = edged[i,j]
+    return output[1:-1,1:-1]
+
+def ThresHolding(img, min, max):
+    height, width = img.shape
+    output = np.zeros(shape=(height,width))
     for i in range(0,height):
         for j in range(0,width):
-            if directional[i,j] = 0:
-                if edged[i,j] < edged[i]
-            if directional[i,j] = 45:
+            if img[i,j] < min:
+                output[i,j] = 0
+            elif img[i,j] > max:
+                output[i,j] = 1
+            else:
+                img[i,j] = 2
+    
+    for h in range(0, height):
+        for w in range(0, width):
+            if output[i,j] == 2:
+                if output[i-1:i+1,j-1:j+1] == 1:
+                    output[i,j] = 1
+                else:
+                    output[i,j] = 0
 
-            if directional[i,j] = 90:
-
-            if directional[i,j] = 135:
     return output
 
 def main():
+    min = 0.0
+    max = 0.1
     # load image
-    img = cv.imread('marvel.png',cv.IMREAD_GRAYSCALE)
+    img = cv.imread('baixa.jpg',cv.IMREAD_GRAYSCALE)
     # normalize
     img = img/255.0
     # gaussian blur
@@ -138,8 +176,14 @@ def main():
     third = GradientDirection(first,SobelEdges())
     # Edge Thinning
     fourth = NonMaximumSupression(second, third)
+    # thresholding
+    filtered = ThresHolding(fourth, min, max)
     cv.imshow("Original",img)
-    #cv.imshow("Filtered",second)
+    cv.imshow("first",first)
+    cv.imshow("second", second)
+    cv.imshow("third",third)
+    cv.imshow("fourth",fourth)
+    cv.imshow("Filtered",filtered)
     cv.waitKey(0)
 
 main()
