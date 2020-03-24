@@ -52,8 +52,10 @@ def template_matching(img, target, threshold, original):
 # main function
 def main():
     # presentation and credits
-    print("Python Test Program: Template Matching Project")
-    print("By Pol Recasens and Marc Rosell")
+    print("--------------------------------------------------")
+    print("- Python Test Program: Template Matching Project -")
+    print("---------|| Pol Recasens & Marc Rosell ||---------")
+    print("--------------------------------------------------")
 
     # call input function
     threshold, path, second_path = input_manager()
