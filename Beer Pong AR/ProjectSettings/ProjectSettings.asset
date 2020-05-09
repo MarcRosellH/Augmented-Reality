@@ -912,7 +912,8 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Collab: 1
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -932,10 +933,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 3
-  cloudProjectId: 
+  cloudProjectId: e89d942c-095c-4753-a9c0-4dffe377c3be
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Beer Pong AR
+  organizationId: polhostrex
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
