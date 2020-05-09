@@ -8,7 +8,7 @@ public class throwObject : MonoBehaviour
     public float flickSpeed = 0.4f;
 
     public string respawnName = "";
-    public float howClose = 9.5f;
+    public float howClose = 1.0f;
 
     float startTime, endTime, swipeDistance, swipeTime;
     Vector2 startPos;
@@ -31,7 +31,7 @@ public class throwObject : MonoBehaviour
     void OnTouch()
     {
         Vector3 mousePos = Input.GetTouch(0).position;
-        mousePos.z = Camera.main.nearClipPlane * howClose;
+        mousePos.z = Camera.main.nearClipPlane*howClose;
         newPosition = Camera.main.ScreenToViewportPoint(mousePos);
         this.transform.localPosition = Vector3.Lerp(this.transform.localPosition, newPosition, 80.0f * Time.deltaTime);
     }
