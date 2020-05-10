@@ -8,7 +8,7 @@ public class throwObject : MonoBehaviour
     public float flickSpeed = 0.4f;
 
     public string respawnName = "";
-    public float howClose = 1.0f;
+    public float howClose = 9.5f;
 
     float startTime, endTime, swipeDistance, swipeTime;
     Vector2 startPos;
@@ -30,10 +30,14 @@ public class throwObject : MonoBehaviour
 
     void OnTouch()
     {
-        Vector3 mousePos = Input.GetTouch(0).position;
-        mousePos.z = Camera.main.nearClipPlane*howClose;
-        newPosition = Camera.main.ScreenToViewportPoint(mousePos);
-        this.transform.localPosition = Vector3.Lerp(this.transform.localPosition, newPosition, 80.0f * Time.deltaTime);
+       Vector3 mousePos = Input.GetTouch(0).position;
+        Vector3 ballScreen = Camera.main.WorldToScreenPoint(this.transform.position);
+        mousePos.z = ballScreen.z;
+        //mousePos.z = Camera.main.nearClipPlane * howClose;
+        //newPosition = Camera.main.ScreenToViewportPoint(mousePos);
+        newPosition = Vector3.Lerp(ballScreen, mousePos, 80.0f * Time.deltaTime);
+        this.transform.localPosition = Camera.main.ScreenToWorldPoint(newPosition);
+        
     }
 
     // Update is called once per frame
@@ -78,7 +82,7 @@ public class throwObject : MonoBehaviour
                 {
                     CalSpeed();
                     MoveAngle();
-                    this.GetComponent<Rigidbody>().AddForce(new Vector3(angle.x * objectSpeed, angle.y * objectSpeed, angle.z * objectSpeed));
+                    this.GetComponent<Rigidbody>().AddForce(new Vector3(/*angle.x **/ 0.0f,/* angle.y **/ 50.0f, /*angle.z **/ 30.0f));
                     this.GetComponent<Rigidbody>().useGravity = true;
                     holding = false;
                     thrown = true;
@@ -117,7 +121,18 @@ public class throwObject : MonoBehaviour
 
     void CalSpeed()
     {
+        flickLength = swipeDistance;
+        if(swipeTime>0)
+            objectVelocity = flickLength / (flickLength - swipeDistance);
 
+        objectSpeed = objectVelocity * 50.0f;
+        //objectSpeed = objectSpeed - (objectSpeed*1.7f);
+
+        if(objectSpeed<= -maxObjectSpeed)
+            objectSpeed = -maxObjectSpeed;
+
+        swipeTime = 0;
+             
     }
 
     void MoveAngle()
