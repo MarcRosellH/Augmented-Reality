@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 3}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -42,8 +42,8 @@ MonoBehaviour:
     y: 0
     width: 230
     height: 364
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -71,7 +71,7 @@ MonoBehaviour:
     y: 0
     width: 1366
     height: 685
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &4
 MonoBehaviour:
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 881, y: 492}
-  m_MaxSize: {x: 16006, y: 14042}
+  m_MinSize: {x: 880, y: 492}
+  m_MaxSize: {x: 16005, y: 14042}
   vertical: 0
-  controlID: 152
+  controlID: 111
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 0
     width: 973
     height: 635
-  m_MinSize: {x: 605, y: 492}
-  m_MaxSize: {x: 12005, y: 14042}
+  m_MinSize: {x: 604, y: 492}
+  m_MaxSize: {x: 12004, y: 14042}
   vertical: 1
-  controlID: 56
+  controlID: 7961
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -188,10 +188,10 @@ MonoBehaviour:
     y: 0
     width: 973
     height: 364
-  m_MinSize: {x: 605, y: 221}
-  m_MaxSize: {x: 12005, y: 4021}
+  m_MinSize: {x: 604, y: 221}
+  m_MaxSize: {x: 12004, y: 4021}
   vertical: 0
-  controlID: 57
+  controlID: 7962
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -328,15 +328,15 @@ MonoBehaviour:
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 07000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 0700000000000000000000000d000000000000000000000000000000000000000000000000000000
   m_TargetDisplay: 0
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -114
-    m_HBaseRangeMax: 114
+    m_HBaseRangeMin: -90.5
+    m_HBaseRangeMax: 90.5
     m_VBaseRangeMin: -161
     m_VBaseRangeMax: 161
     m_HAllowExceedBaseRangeMin: 1
@@ -344,8 +344,8 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 1
-    m_VSlider: 1
+    m_HSlider: 0
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -358,18 +358,18 @@ MonoBehaviour:
       y: 21
       width: 228
       height: 322
-    m_Scale: {x: 1.0609, y: 1.0609}
-    m_Translation: {x: 111.3195, y: 162.857}
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 114, y: 161}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -104.92931
-      y: -153.50835
-      width: 214.91187
-      height: 303.5159
+      x: -114
+      y: -161
+      width: 228
+      height: 322
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_LastWindowPixelSize: {x: 228, y: 343}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
-  m_LowResolutionForAspectRatios: 01000000000000000000
+  m_LowResolutionForAspectRatios: 01000001000000000000
   m_XRRenderMode: 0
 --- !u!114 &14
 MonoBehaviour:
@@ -410,7 +410,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3cbeffff66beffff84c0ffff92c2ffffbcc2ffffdac4ffff8ac5ffffb4c5ffffd2c7ffff8ec8ffffb8c8ffffd6caffffaecbffffd8cbfffff6cdffffaaceffffd4cefffff2d0ffffacd1ffffd6d1fffff4d3ffffa4d4ffffced4ffffd8d4ffff06d7ffff30d7ffff4ed9ffffb4daffffdedafffffcdcffffb2ddffffdcddfffffadfffff60e1ffff8ae1ffffa8e3ffff86e8ffffb2e8ffffd0eaffff98ebffffc2ebffffe0edffffceeffffff8efffff16f2fffff4f6ffff1ef7ffff3cf9ffff56fbffff
+      m_ExpandedIDs: 04b8ffff2cb8ffffe4b8ffffe8b8ffff1ebaffff48baffff14bdffff18bdffff8ebeffff68bfffffb2bfffff90c0ffff3ac3ffff14c4ffff38c4ffff0cc5fffff6c5ffffeccbffff0adaffff7adaffffbcdaffffaaf9ffffe2f9ffff72fbffff7e3e0000ce3f000056420000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -470,9 +470,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.042108834, y: 6.824085, z: -2.7684255}
+    m_Target: {x: 0.8224202, y: 3.1364336, z: 0.9487598}
     speed: 2
-    m_Value: {x: 0.042108834, y: 6.824085, z: -2.7684255}
+    m_Value: {x: 0.8224202, y: 3.1364336, z: 0.9487598}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -502,13 +502,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.15992829, y: -0.39879107, z: 0.07082358, w: 0.90022236}
+    m_Target: {x: 0.25289983, y: -0.3365043, z: 0.094352424, w: 0.90219206}
     speed: 2
-    m_Value: {x: 0.15992609, y: -0.39878556, z: 0.070822604, w: 0.9002099}
+    m_Value: {x: 0.25289398, y: -0.33649653, z: 0.09435024, w: 0.9021712}
   m_Size:
-    m_Target: 3.460884
+    m_Target: 764.6161
     speed: 2
-    m_Value: 3.460884
+    m_Value: 764.6161
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -599,21 +599,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\polki\Documents\GitHub\Augmented-Reality\Beer Pong
     AR
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 94}
-    m_SelectedIDs: 44350000
-    m_LastClickedID: 13636
-    m_ExpandedIDs: 000000004435000000ca9a3b
+    scrollPos: {x: 0, y: 143}
+    m_SelectedIDs: c0350000
+    m_LastClickedID: 13760
+    m_ExpandedIDs: 000000005a350000c835000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -641,7 +641,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000044350000
+    m_ExpandedIDs: 000000005a350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

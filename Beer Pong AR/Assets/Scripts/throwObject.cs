@@ -10,6 +10,10 @@ public class throwObject : MonoBehaviour
     public string respawnName = "";
     public float howClose = 9.5f;
 
+    turnManager _turnManager;
+    int playerTurn = 1;
+
+
     float startTime, endTime, swipeDistance, swipeTime;
     Vector2 startPos;
     Vector2 endPos;
@@ -26,6 +30,7 @@ public class throwObject : MonoBehaviour
     void Start()
     {
         this.GetComponent<Rigidbody>().useGravity = false;
+        _turnManager = this.GetComponent<turnManager>();
     }
 
     void OnTouch()
@@ -86,7 +91,7 @@ public class throwObject : MonoBehaviour
                     this.GetComponent<Rigidbody>().useGravity = true;
                     holding = false;
                     thrown = true;
-                    Invoke("_Reset", 5.0f);
+                    Invoke("ChangeTurn", 5.0f);
                 }
                 else
                     _Reset();
@@ -117,7 +122,33 @@ public class throwObject : MonoBehaviour
         this.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         thrown = false;
         holding = false;
+
     }
+
+    void ChangeTurn()
+    {
+        Transform respawnPoint = GameObject.Find(respawnName).transform;
+        this.gameObject.transform.position = respawnPoint.position;
+        this.gameObject.transform.rotation = respawnPoint.rotation;
+        this.GetComponent<Rigidbody>().useGravity = false;
+        this.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        this.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        thrown = false;
+        holding = false;
+
+
+        if (playerTurn == 1)
+        {
+            playerTurn = 2;
+            _turnManager.ChangeTurn(playerTurn); 
+        }
+        else
+        {
+            playerTurn = 1;
+            _turnManager.ChangeTurn(playerTurn);
+        }
+    }
+
 
     void CalSpeed()
     {
