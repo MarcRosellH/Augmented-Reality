@@ -9,6 +9,7 @@ public class turnManager : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
     public Text turnText;
+    throwObject _thrownObject;
     private float timeWhenDisappear = 5.0f;
     private float timeToAppear = 3.0f;
     private bool fadingOut = false;
@@ -17,6 +18,8 @@ public class turnManager : MonoBehaviour
         player2.SetActive(false);
         player1.SetActive(true);
         turnText.enabled = false;
+
+        _thrownObject = this.GetComponent<throwObject>();
        
     }
 
@@ -27,11 +30,17 @@ public class turnManager : MonoBehaviour
         {
             if(player1.active)
             {
-                ChangeTurn(2);
+                _thrownObject.playerTurn = 1;
+
+
+                _thrownObject.ChangeTurnReset();
             }
             else
             {
-                ChangeTurn(1);
+                _thrownObject.playerTurn = 2;
+
+
+                _thrownObject.ChangeTurnReset();
 
             }
         }
@@ -58,6 +67,7 @@ public class turnManager : MonoBehaviour
 
         turnText.text = "Player " + turn + " turn";
         EnableText();
+
        
      
     }

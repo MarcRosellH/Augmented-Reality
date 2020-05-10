@@ -22,7 +22,11 @@ public class ballDetection : MonoBehaviour
         if (audio_start && !audio_source.isPlaying)
         {
             this.gameObject.transform.parent.gameObject.SetActive(false);
-            cupManager.ScoreCup();
+            if (this.tag == "Player1")
+                cupManager.ScoreCup(1);
+            else if (this.tag == "Player2")
+                cupManager.ScoreCup(2);
+
             audio_start = false;
         }
 
@@ -30,8 +34,11 @@ public class ballDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider ball)
     {
-        audio_source.Play();
-        audio_start = true;
+        if (!audio_start)
+        {
+            audio_source.Play();
+            audio_start = true;
+        }
          
     }
 

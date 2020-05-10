@@ -355,6 +355,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 615782645841940438, guid: cedb98bacf0ecb340a93723b2f4dc9d8,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cedb98bacf0ecb340a93723b2f4dc9d8, type: 3}
 --- !u!4 &184974040 stripped
@@ -547,6 +552,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 615782645841940438, guid: cedb98bacf0ecb340a93723b2f4dc9d8,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cedb98bacf0ecb340a93723b2f4dc9d8, type: 3}
 --- !u!4 &235983741 stripped
@@ -627,6 +637,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 3583840842968661288, guid: 012feebf655dca740aebe9e51553688e,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012feebf655dca740aebe9e51553688e, type: 3}
 --- !u!4 &353770102 stripped
@@ -707,6 +722,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 3583840842968661288, guid: 012feebf655dca740aebe9e51553688e,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012feebf655dca740aebe9e51553688e, type: 3}
 --- !u!4 &447913086 stripped
@@ -787,6 +807,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 3583840842968661288, guid: 012feebf655dca740aebe9e51553688e,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012feebf655dca740aebe9e51553688e, type: 3}
 --- !u!4 &543896990 stripped
@@ -988,6 +1013,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 615782645841940438, guid: cedb98bacf0ecb340a93723b2f4dc9d8,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cedb98bacf0ecb340a93723b2f4dc9d8, type: 3}
 --- !u!4 &869069699 stripped
@@ -1068,6 +1098,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 3583840842968661288, guid: 012feebf655dca740aebe9e51553688e,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012feebf655dca740aebe9e51553688e, type: 3}
 --- !u!4 &891112204 stripped
@@ -1148,6 +1183,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 3583840842968661288, guid: 012feebf655dca740aebe9e51553688e,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012feebf655dca740aebe9e51553688e, type: 3}
 --- !u!4 &1020950703 stripped
@@ -1165,7 +1205,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1088805488}
-  - component: {fileID: 1088805489}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -1196,18 +1235,6 @@ Transform:
   m_Father: {fileID: 1833080170}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1088805489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088805487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7594bbcb08d9b254589050e2ccfe11ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1100681491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1386,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 615782645841940438, guid: cedb98bacf0ecb340a93723b2f4dc9d8,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cedb98bacf0ecb340a93723b2f4dc9d8, type: 3}
 --- !u!4 &1134524489 stripped
@@ -1445,6 +1477,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 3583840842968661288, guid: 012feebf655dca740aebe9e51553688e,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012feebf655dca740aebe9e51553688e, type: 3}
 --- !u!4 &1540949749 stripped
@@ -1665,6 +1702,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 3583840842968661288, guid: 012feebf655dca740aebe9e51553688e,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012feebf655dca740aebe9e51553688e, type: 3}
 --- !u!4 &1666937846 stripped
@@ -1918,6 +1960,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 615782645841940438, guid: cedb98bacf0ecb340a93723b2f4dc9d8,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cedb98bacf0ecb340a93723b2f4dc9d8, type: 3}
 --- !u!4 &1767668510 stripped
@@ -1998,6 +2045,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 615782645841940438, guid: cedb98bacf0ecb340a93723b2f4dc9d8,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cedb98bacf0ecb340a93723b2f4dc9d8, type: 3}
 --- !u!4 &1817398120 stripped
@@ -2020,6 +2072,7 @@ GameObject:
   - component: {fileID: 1833080167}
   - component: {fileID: 1833080166}
   - component: {fileID: 1833080165}
+  - component: {fileID: 1833080171}
   m_Layer: 0
   m_Name: ImageTarget
   m_TagString: Untagged
@@ -2146,6 +2199,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1833080171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833080164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7594bbcb08d9b254589050e2ccfe11ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberCups1: 9
+  numberCups2: 9
+  counterPlayer1: {fileID: 1100681493}
+  counterPlayer2: {fileID: 1668167143}
 --- !u!1001 &1849272857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2218,6 +2287,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 3583840842968661288, guid: 012feebf655dca740aebe9e51553688e,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012feebf655dca740aebe9e51553688e, type: 3}
 --- !u!4 &1849272858 stripped
@@ -2472,6 +2546,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 615782645841940438, guid: cedb98bacf0ecb340a93723b2f4dc9d8,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cedb98bacf0ecb340a93723b2f4dc9d8, type: 3}
 --- !u!4 &2050130163 stripped
@@ -2552,6 +2631,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 615782645841940438, guid: cedb98bacf0ecb340a93723b2f4dc9d8,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cedb98bacf0ecb340a93723b2f4dc9d8, type: 3}
 --- !u!4 &2088380806 stripped
@@ -2644,6 +2728,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 615782645841940438, guid: cedb98bacf0ecb340a93723b2f4dc9d8,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cedb98bacf0ecb340a93723b2f4dc9d8, type: 3}
 --- !u!1001 &8011495325768791176
@@ -2718,5 +2807,10 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1963113426}
+    - target: {fileID: 3583840842968661288, guid: 012feebf655dca740aebe9e51553688e,
+        type: 3}
+      propertyPath: cupManager
+      value: 
+      objectReference: {fileID: 1833080171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012feebf655dca740aebe9e51553688e, type: 3}

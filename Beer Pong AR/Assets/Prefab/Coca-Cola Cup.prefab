@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 386222511484960485}
   m_Layer: 0
   m_Name: TriggerCup
-  m_TagString: Untagged
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 0}
+  cupManager: {fileID: 0}
 --- !u!82 &386222511484960485
 AudioSource:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class throwObject : MonoBehaviour
     public float howClose = 9.5f;
 
     turnManager _turnManager;
-    int playerTurn = 1;
+    public int playerTurn = 1;
 
 
     float startTime, endTime, swipeDistance, swipeTime;
@@ -125,7 +125,7 @@ public class throwObject : MonoBehaviour
 
     }
 
-    void ChangeTurn()
+    public void ChangeTurnReset()
     {
         Transform respawnPoint = GameObject.Find(respawnName).transform;
         this.gameObject.transform.position = respawnPoint.position;
