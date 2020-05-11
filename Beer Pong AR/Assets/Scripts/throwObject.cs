@@ -87,11 +87,11 @@ public class throwObject : MonoBehaviour
                 {
                     CalSpeed();
                     MoveAngle();
-                    this.GetComponent<Rigidbody>().AddForce(new Vector3(/*angle.x **/ 0.0f,/* angle.y **/ 50.0f, /*angle.z **/ 30.0f));
+                    this.GetComponent<Rigidbody>().AddForce(new Vector3(/*angle.x **/ 0.0f,/* angle.y **/ 10.0f, /*angle.z **/ 90.0f));
                     this.GetComponent<Rigidbody>().useGravity = true;
                     holding = false;
                     thrown = true;
-                    Invoke("ChangeTurn", 5.0f);
+                    Invoke("ChangeTurnReset", 5.0f);
                 }
                 else
                     _Reset();
@@ -127,6 +127,7 @@ public class throwObject : MonoBehaviour
 
     public void ChangeTurnReset()
     {
+        Debug.Log("Changing turn");
         Transform respawnPoint = GameObject.Find(respawnName).transform;
         this.gameObject.transform.position = respawnPoint.position;
         this.gameObject.transform.rotation = respawnPoint.rotation;
