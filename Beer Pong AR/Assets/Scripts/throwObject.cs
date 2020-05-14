@@ -13,6 +13,8 @@ public class throwObject : MonoBehaviour
     turnManager _turnManager;
     public int playerTurn = 1;
 
+    private GameObject first_parent;
+
 
     float startTime, endTime, swipeDistance, swipeTime;
     Vector2 startPos;
@@ -31,6 +33,7 @@ public class throwObject : MonoBehaviour
     {
         this.GetComponent<Rigidbody>().useGravity = false;
         _turnManager = this.GetComponent<turnManager>();
+        first_parent = this.transform.parent.gameObject;
     }
 
     void OnTouch()
@@ -128,6 +131,7 @@ public class throwObject : MonoBehaviour
     public void ChangeTurnReset()
     {
         Debug.Log("Changing turn");
+        transform.SetParent(first_parent.transform);
         Transform respawnPoint = GameObject.Find(respawnName).transform;
         this.gameObject.transform.position = respawnPoint.position;
         this.gameObject.transform.rotation = respawnPoint.rotation;
