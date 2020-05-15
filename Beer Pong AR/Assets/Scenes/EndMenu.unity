@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 1024989135}
   - component: {fileID: 1024989134}
   - component: {fileID: 1024989133}
+  - component: {fileID: 1024989137}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -537,6 +538,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1024989137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024989132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79951c727ffeefb44942ce6b46fb58fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1280982964
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +563,6 @@ GameObject:
   - component: {fileID: 1280982969}
   - component: {fileID: 1280982968}
   - component: {fileID: 1280982967}
-  - component: {fileID: 1280982966}
   m_Layer: 5
   m_Name: ButtonRestart
   m_TagString: Untagged
@@ -578,18 +590,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 161.5, y: 42.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1280982966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1280982964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43b2f161ff6aa4147b8417c4367ce19e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1280982967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,7 +648,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1280982966}
+      - m_Target: {fileID: 1024989137}
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -1027,7 +1027,6 @@ GameObject:
   - component: {fileID: 1448111158}
   - component: {fileID: 1448111157}
   - component: {fileID: 1448111156}
-  - component: {fileID: 1448111155}
   - component: {fileID: 1448111159}
   m_Layer: 5
   m_Name: ButtonExit
@@ -1056,18 +1055,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 101.6, y: 40.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1448111155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448111153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43b2f161ff6aa4147b8417c4367ce19e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1448111156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,7 +1098,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1448111155}
+      - m_Target: {fileID: 1024989137}
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:

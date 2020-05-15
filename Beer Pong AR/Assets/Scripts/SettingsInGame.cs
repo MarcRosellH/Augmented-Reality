@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingsInGame : MonoBehaviour
 {
@@ -41,5 +42,11 @@ public class SettingsInGame : MonoBehaviour
             Time.timeScale = 1.0f;
             settings_panel.SetActive(false);
         }
+    }
+
+    public void Continue()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
