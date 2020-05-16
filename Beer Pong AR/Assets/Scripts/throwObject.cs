@@ -13,6 +13,8 @@ public class throwObject : MonoBehaviour
     turnManager _turnManager;
     public int playerTurn = 1;
 
+    public GameObject touchPosition;
+    public GameObject cameraParent;
     private GameObject first_parent;
 
 
@@ -38,14 +40,14 @@ public class throwObject : MonoBehaviour
 
     void OnTouch()
     {
-       Vector3 mousePos = Input.GetTouch(0).position;
-        Vector3 ballScreen = Camera.main.WorldToScreenPoint(this.transform.position);
+        Vector3 mousePos = Input.GetTouch(0).position;
+        Vector3 ballScreen = Camera.main.WorldToScreenPoint(touchPosition.transform.position);
         mousePos.z = ballScreen.z;
         //mousePos.z = Camera.main.nearClipPlane * howClose;
         //newPosition = Camera.main.ScreenToViewportPoint(mousePos);
         newPosition = Vector3.Lerp(ballScreen, mousePos, 80.0f * Time.deltaTime);
         this.transform.localPosition = Camera.main.ScreenToWorldPoint(newPosition);
-        
+
     }
 
     // Update is called once per frame
@@ -117,7 +119,8 @@ public class throwObject : MonoBehaviour
 
     void _Reset()
     {
-        Transform respawnPoint = GameObject.Find(respawnName).transform;
+        transform.SetParent(cameraParent.transform);
+        Transform respawnPoint = GameObject.Find(touchPosition.name).transform;
         this.gameObject.transform.position = respawnPoint.position;
         this.gameObject.transform.rotation = respawnPoint.rotation;
         this.GetComponent<Rigidbody>().useGravity = false;

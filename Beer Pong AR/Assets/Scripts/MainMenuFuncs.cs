@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class MainMenuFuncs : MonoBehaviour
 {
@@ -10,12 +11,11 @@ public class MainMenuFuncs : MonoBehaviour
     public GameObject panelSettings;
     public GameObject mainPanel;
     public Slider musicSlider;
-    public AudioSource audioSource;
+    public AudioMixer audio_mixer;
     private float volume;
     void Start()
     {
-        volume = audioSource.volume;
-        audioSource.volume = volume * musicSlider.value;
+ 
 
     }
 
@@ -38,9 +38,9 @@ public class MainMenuFuncs : MonoBehaviour
         mainPanel.SetActive(true);
     }
 
-    public void ChangeMusicValue()
+    public void SetMusicValue(float sliderValue)
     {
-        audioSource.volume = volume * musicSlider.value;
+        audio_mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
     }
 
     public void ExitGame()
