@@ -12,6 +12,7 @@ public class MainMenuFuncs : MonoBehaviour
     public GameObject mainPanel;
     public Slider musicSlider;
     public AudioMixer audio_mixer;
+    public AudioMixer sfx_mixer;
     private float volume;
     void Start()
     {
@@ -41,6 +42,11 @@ public class MainMenuFuncs : MonoBehaviour
     public void SetMusicValue(float sliderValue)
     {
         audio_mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+    }
+
+    public void SetSFXValue(float sliderValue)
+    {
+        sfx_mixer.SetFloat("SFXVolume", Mathf.Log10(sliderValue) * 20);
     }
 
     public void ExitGame()
