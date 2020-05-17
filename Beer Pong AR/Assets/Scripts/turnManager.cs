@@ -65,8 +65,8 @@ public class turnManager : MonoBehaviour
             player2.SetActive(true);
         }
 
-        turnText.text = "Player " + turn + " turn";
         EnableText();
+        turnText.text = "Player " + turn + " turn";
 
        
      
