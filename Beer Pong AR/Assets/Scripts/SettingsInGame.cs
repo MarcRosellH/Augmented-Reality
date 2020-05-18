@@ -9,7 +9,7 @@ public class SettingsInGame : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject settings_panel;
-    public AudioSource pauseButtonAudioSource;
+    public AudioSource buttonClickAudio;
     public AudioMixer audio_mixer;
     public AudioMixer sfx_mixer;
     public Slider sliderMusic;
@@ -39,14 +39,14 @@ public class SettingsInGame : MonoBehaviour
     {
         if (!settings_panel.active)
         {
-            pauseButtonAudioSource.Play();
+            buttonClickAudio.Play();
 
             settings_panel.SetActive(true);
             Time.timeScale = 0.0f;
         }
         else
         {
-            pauseButtonAudioSource.Play();
+            buttonClickAudio.Play();
 
             Time.timeScale = 1.0f;
             settings_panel.SetActive(false);
@@ -55,6 +55,7 @@ public class SettingsInGame : MonoBehaviour
 
     public void Continue()
     {
+        buttonClickAudio.Play();
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
@@ -70,5 +71,12 @@ public class SettingsInGame : MonoBehaviour
     {
         sfx_mixer.SetFloat("SFXVolume", Mathf.Log10(sliderValue) * 20);
        
+    }
+
+    public void GoBackToMainMenu()
+    {
+        buttonClickAudio.Play();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }

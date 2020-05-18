@@ -11,11 +11,12 @@ public class MainMenuFuncs : MonoBehaviour
     public GameObject mainPanel;
     public AudioMixer audio_mixer;
     public AudioMixer sfx_mixer;
+    private AudioSource audioSource;
    
 
     void Start()
     {
- 
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -26,6 +27,7 @@ public class MainMenuFuncs : MonoBehaviour
 
     public void PlayGame()
     {
+        audioSource.Play();
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
@@ -33,12 +35,14 @@ public class MainMenuFuncs : MonoBehaviour
 
     public void  OpenSettings()
     {
+        audioSource.Play();
         mainPanel.SetActive(false);
         panelSettings.SetActive(true);
     }
 
     public void CloseSettings()
     {
+        audioSource.Play();
         panelSettings.SetActive(false);
         mainPanel.SetActive(true);
     }
@@ -61,6 +65,7 @@ public class MainMenuFuncs : MonoBehaviour
 
     public void ExitGame()
     {
+        audioSource.Play();
         Application.Quit();
     }
 }

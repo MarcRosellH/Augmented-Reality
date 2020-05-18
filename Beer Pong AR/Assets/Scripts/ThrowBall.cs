@@ -24,10 +24,12 @@ public class ThrowBall : MonoBehaviour
     float throwForceInZ = 40.0f;
 
     Rigidbody rb;
+    AudioSource audio_source;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audio_source = GetComponent<AudioSource>();
         _turnManager = this.GetComponent<turnManager>();
     }
 
@@ -126,5 +128,14 @@ public class ThrowBall : MonoBehaviour
             playerTurn = 1;
             _turnManager.ChangeTurn(playerTurn);
         }
+    }
+
+
+
+    void OnCollisionEnter(Collision collision)
+    {
+
+        audio_source.Play();
+        
     }
 }

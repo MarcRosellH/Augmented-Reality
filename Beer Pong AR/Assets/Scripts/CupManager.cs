@@ -47,9 +47,9 @@ public class CupManager : MonoBehaviour
             Time.timeScale = 0.0f;
 
             if (numberCups1 == 0)
-                whoWin.text = "Player 2 wins!";
-            else
                 whoWin.text = "Player 1 wins!";
+            else
+                whoWin.text = "Player 2 wins!";
 
             panelContinue.SetActive(true);
         }
