@@ -5,7 +5,10 @@ using UnityEngine;
 public class Plank : MonoBehaviour
 {
     // Start is called before the first frame update
+    public bool plankCollision;
+
     AudioSource audio_source;
+
     void Start()
     {
         audio_source = GetComponent<AudioSource>();
@@ -17,5 +20,11 @@ public class Plank : MonoBehaviour
         
     }
 
-   
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag=="ball")
+        {
+           plankCollision = true;
+        }
+    }
 }

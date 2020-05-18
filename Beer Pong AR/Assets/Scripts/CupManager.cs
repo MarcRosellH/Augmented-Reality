@@ -33,12 +33,12 @@ public class CupManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.N))
         {
-            ScoreCup(1);
+            ScoreCup(1,1);
         }
 
         if (Input.GetKeyDown(KeyCode.M))
         {
-            ScoreCup(2);
+            ScoreCup(2,1);
         }
 
         if (numberCups1 == 0 || numberCups2 == 0)
@@ -55,17 +55,17 @@ public class CupManager : MonoBehaviour
         }
     }
 
-    public void ScoreCup(int player)
+    public void ScoreCup(int player, int howMany)
     {
         if (player == 1)
         {
-            numberCups1--;
+            numberCups1 -= howMany;
             counterPlayer1.text = "Player 1: " + numberCups1;
             
         }
         else
         {
-            numberCups2--;
+            numberCups2 -= howMany;
             counterPlayer2.text = "Player 2: " + numberCups2;
         }
         

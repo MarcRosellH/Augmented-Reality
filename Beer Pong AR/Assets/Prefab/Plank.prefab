@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8385465499632929216}
   - component: {fileID: 7751377231287315711}
   - component: {fileID: 3518259888842322356}
+  - component: {fileID: 3828490585722615959}
   m_Layer: 0
   m_Name: Plank
   m_TagString: Untagged
@@ -110,3 +111,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3828490585722615959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4537492282585292427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e4f4745f0a3d2c47ae095865aa591d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

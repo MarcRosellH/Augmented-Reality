@@ -9,6 +9,8 @@ public class ballDetection : MonoBehaviour
     BoxCollider ball_collider;
     private bool audio_start = false;
     public CupManager cupManager;
+    public Plank plank;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +24,22 @@ public class ballDetection : MonoBehaviour
         if (audio_start && !audio_source.isPlaying)
         {
             this.gameObject.transform.parent.gameObject.SetActive(false);
-            if (this.tag == "Player1")
-                cupManager.ScoreCup(1);
-            else if (this.tag == "Player2")
-                cupManager.ScoreCup(2);
+            if (!plank.plankCollision)
+            {
+                if (this.tag == "Player1")
+                    cupManager.ScoreCup(1, 1);
+                else if (this.tag == "Player2")
+                    cupManager.ScoreCup(2, 1);
+            }
+            else
+            {
+                if (this.tag == "Player1")
+                    cupManager.ScoreCup(1, 2);
+                else if (this.tag == "Player2")
+                    cupManager.ScoreCup(2, 2);
+
+                plank.plankCollision = false;
+            }
 
             audio_start = false;
         }
