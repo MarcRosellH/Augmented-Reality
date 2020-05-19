@@ -10,7 +10,8 @@ public class ThrowBall : MonoBehaviour
     public string respawnName = "";
     turnManager _turnManager;
     public int playerTurn = 1;
-  
+    public Plank plank;
+
 
 
     Vector2 startPos, endPos, direction;
@@ -116,7 +117,7 @@ public class ThrowBall : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         holding = false;
-
+        plank.plankCollision = false;
 
         if (playerTurn == 1)
         {
