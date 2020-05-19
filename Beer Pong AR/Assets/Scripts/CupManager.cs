@@ -57,16 +57,19 @@ public class CupManager : MonoBehaviour
 
     public void ScoreCup(int player, int howMany)
     {
-        if (player == 1)
+        if (numberCups1 != 0 && numberCups2 != 0)
         {
-            numberCups1 -= howMany;
-            counterPlayer1.text = "Player 1: " + numberCups1;
-            
-        }
-        else
-        {
-            numberCups2 -= howMany;
-            counterPlayer2.text = "Player 2: " + numberCups2;
+            if (player == 1)
+            {
+                numberCups1 -= howMany;
+                counterPlayer1.text = "Player 1: " + numberCups1;
+
+            }
+            else
+            {
+                numberCups2 -= howMany;
+                counterPlayer2.text = "Player 2: " + numberCups2;
+            }
         }
         
     }

@@ -18,10 +18,10 @@ public class ThrowBall : MonoBehaviour
     bool holding = false;
 
     [SerializeField]
-    float throwForceInXandY = 10.0f;
+    float throwForceInXandY = 45.0f;
 
     [SerializeField]
-    float throwForceInZ = 40.0f;
+    float throwForceInZ = 200.0f;
 
     Rigidbody rb;
     AudioSource audio_source;
@@ -43,7 +43,7 @@ public class ThrowBall : MonoBehaviour
         //mousePos.z = Camera.main.nearClipPlane * howClose;
         //newPosition = Camera.main.ScreenToViewportPoint(mousePos);
         Vector3 newPosition = Vector3.Lerp(ballScreen, mousePos, 80.0f * Time.deltaTime);
-        this.transform.localPosition = Camera.main.ScreenToWorldPoint(newPosition);
+        this.transform.position = Camera.main.ScreenToWorldPoint(newPosition);
 
     }
     void Update()
@@ -74,8 +74,8 @@ public class ThrowBall : MonoBehaviour
             if (timeInterval > 0.4f && swipeDistance > 100.0f)
             {
                 rb.useGravity = true;
-                
-                rb.AddForce(-direction.x * throwForceInXandY, -direction.y * throwForceInXandY, throwForceInZ*swipeDistance);
+                Physics.gravity = new Vector3(0, -200.0F, 0);
+                rb.AddForce(direction.x * throwForceInXandY, -direction.y * throwForceInXandY, throwForceInZ*swipeDistance*15.0f);
                 holding = false;
 
                 Debug.Log("Throwed");
