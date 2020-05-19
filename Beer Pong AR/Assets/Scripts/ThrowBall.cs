@@ -19,10 +19,10 @@ public class ThrowBall : MonoBehaviour
     bool holding = false;
 
     [SerializeField]
-    float throwForceInXandY = 45.0f;
+    float throwForceInXandY = 65.0f;
 
     [SerializeField]
-    float throwForceInZ = 200.0f;
+    float throwForceInZ = 230.0f;
 
     Rigidbody rb;
     AudioSource audio_source;
