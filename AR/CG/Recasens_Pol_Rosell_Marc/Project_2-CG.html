@@ -1,45 +1,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Recasens Pol & Rosell Marc -CG Project- WebGL Application</title>
+        <title>Computer Graphics - Project 2 - Pol Recasens and Marc Rosell</title>
         <meta charset="utf-8">
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-
         <script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
         <script type="text/javascript" src="webgl-utils.js"></script>
-
         <script id="shader-vs" type="x-shader/x-vertex">
             attribute vec3 aVertexPosition;
-            attribute vec3 aVertexColor;
 
             uniform mat4 uMVMatrix;
             uniform mat4 uPMatrix;
 
-            varying vec4 vColor;
-
             void main(void) {
-                vColor = vec4(aVertexColor, 1.0);
                 gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
             }
         </script>
-        
         <script id="shader-fs" type="x-shader/x-fragment">
             precision mediump float;
 
-            varying vec4 vColor;
-
             void main(void) {
-                gl_FragColor = vColor;
+                gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
             }
         </script>
-        
         <script type="text/javascript">
 
             // Global variables
             var gl;
             var shaderProgram;
             var triangleVertexPositionBuffer;
-
 
             function initGL(canvas)
             {    
@@ -57,7 +46,6 @@
                     alert("Could not initialise WebGL, sorry :-(");
                 }
             }
-
 
             function getShader(id)
             {
@@ -95,7 +83,6 @@
                 return shader;
             }
 
-
             function initShaders()
             {
                 var fragmentShader = getShader("shader-fs");
@@ -119,22 +106,19 @@
                 shaderProgram.mvMatrixUniform = gl.getUniformLocation(shaderProgram, "uMVMatrix");
             }
 
-            
             function loadSceneOnGPU()
             {
-                var shader1 = fillArray
                 triangleVertexPositionBuffer = gl.createBuffer();
                 gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexPositionBuffer);
                 var vertices = [
-                     0.0, 1.0, 0.0,
+                    0.0, 1.0, 0.0,
                     -1.0, -1.0, 0.0,
-                     1.0, -1.0, 0.0
+                    1.0, -1.0, 0.0
                 ];
                 gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
                 triangleVertexPositionBuffer.itemSize = 3;
                 triangleVertexPositionBuffer.numItems = 3;
             }
-
 
             function drawScene()
             {
@@ -161,8 +145,6 @@
                 gl.drawArrays(gl.TRIANGLES, 0, triangleVertexPositionBuffer.numItems);
             }
 
-
-
             function webGLStart()
             {
                 initGL();
@@ -171,13 +153,9 @@
 
                 drawScene();
             }
-
         </script>
-
     </head>
-
     <body onload="webGLStart();" onresize="webGLStart();">
-        <canvas id="webGL-canvas" style="border: none; width:100%; height:100%; margin: 0 auto;"></canvas>    
+        <canvas id="webGL-canvas" style="border: none; width:100%; height:100%; margin: 0 auto;" width="1445" height="889"></canvas>    
     </body>
-
 </html>
